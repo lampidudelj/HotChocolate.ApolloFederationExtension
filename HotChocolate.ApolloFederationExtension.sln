@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolate.ApolloFederationExtension", "hotchocolate-apollo-federation-extension\HotChocolate.ApolloFederationExtension.csproj", "{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AFC14B1-2934-4FBC-9047-3B1467ACE742}
+	EndGlobalSection
+EndGlobal
