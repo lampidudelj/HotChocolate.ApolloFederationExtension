@@ -24,13 +24,7 @@ namespace HotChocolate.ApolloFederationExtension.Scalars
 
             switch (valueSyntax)
             {
-                case StringValueNode:
-                case IntValueNode:
-                case FloatValueNode:
-                case BooleanValueNode:
-                case ListValueNode:
                 case ObjectValueNode:
-                case NullValueNode:
                     return true;
 
                 default:
@@ -66,22 +60,10 @@ namespace HotChocolate.ApolloFederationExtension.Scalars
                 case string s:
                     return new StringValueNode(s);
 
-                case short sh:
-                    return new IntValueNode(sh);
-
                 case int i:
                     return new IntValueNode(i);
 
-                case long l:
-                    return new IntValueNode(l);
-
-                case float f:
-                    return new FloatValueNode(f);
-
-                case double db:
-                    return new FloatValueNode(db);
-
-                case decimal d:
+                case double d:
                     return new FloatValueNode(d);
 
                 case bool b:
