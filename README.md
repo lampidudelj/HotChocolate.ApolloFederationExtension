@@ -1,4 +1,5 @@
 # HotChocolate Apollo Federation Extension
+[![CI](https://github.com/lampidudelj/HotChocolate.ApolloFederationExtension/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/lampidudelj/HotChocolate.ApolloFederationExtension/actions/workflows/ci.yml)
 
 An extension adding GraphQL federation support to HotChocolate framework based on [Apollo Federation Spec](https://www.apollographql.com/docs/federation/federation-spec/)
 
