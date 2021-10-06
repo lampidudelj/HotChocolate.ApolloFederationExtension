@@ -102,12 +102,11 @@ namespace HotChocolate.ApolloFederationExtension.Tests.Scalars.Tests
             ExpectParseValueToMatchType<AnyScalarType>(value, typeof(ObjectValueNode));
         }
 
-
         [Fact]
         public void ParseValue_GivenListObject_MatchExpectedType()
         {
             // arrange
-            List<object> value = new List<object>() {{ "id" }, { 1 }, { "name" }, { "foo" }};
+            List<object> value = new List<object>() { { "id" }, { 1 }, { "name" }, { "foo" } };
 
             // act
             // assert
@@ -148,7 +147,6 @@ namespace HotChocolate.ApolloFederationExtension.Tests.Scalars.Tests
             // assert
             ExpectParseResultToMatchType<AnyScalarType>(value, typeof(ObjectValueNode));
         }
-
 
         [Fact]
         public void ParseResult_GivenListObject_MatchExpectedType()

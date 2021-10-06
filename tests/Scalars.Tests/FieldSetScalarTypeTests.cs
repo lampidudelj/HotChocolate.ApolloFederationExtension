@@ -2,7 +2,6 @@
 using HotChocolate.Language;
 using Snapshooter.Xunit;
 using System;
-using System.Collections.Generic;
 using Xunit;
 
 namespace HotChocolate.ApolloFederationExtension.Tests.Scalars.Tests

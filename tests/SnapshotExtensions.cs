@@ -1,16 +1,11 @@
 ﻿using HotChocolate.Execution;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Snapshooter;
 using Snapshooter.Xunit;
+using System.Threading.Tasks;
 
 namespace HotChocolate.ApolloFederationExtension.Tests
 {
     public static class SnapshotExtensions
     {
-        
         public static async Task<string> ToJsonAsync(this Task<IExecutionResult> task)
         {
             IExecutionResult result = await task;

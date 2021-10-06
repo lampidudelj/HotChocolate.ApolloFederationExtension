@@ -1,11 +1,9 @@
 ﻿using HotChocolate.ApolloFederationExtension.Attributes;
 using HotChocolate.ApolloFederationExtension.Directives;
-using HotChocolate.ApolloFederationExtension.Unions;
 using HotChocolate.Execution;
 using HotChocolate.Types;
 using Microsoft.Extensions.DependencyInjection;
 using Snapshooter.Xunit;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
