@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.ApolloFederati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.ApolloFederationExtension.Tests", "tests\HotChocolate.ApolloFederationExtension.Tests.csproj", "{D8859E88-790D-4C3B-89DF-F172006D3FDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolate.ApolloFederationExtension.Demo", "Demo\HotChocolate.ApolloFederationExtension.Demo.csproj", "{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolate.ApolloFederationExtension.Demo", "demo\HotChocolate.ApolloFederationExtension.Demo.csproj", "{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
