@@ -4,13 +4,15 @@ An extension adding GraphQL federation support to HotChocolate framework based o
 
 ## Getting Started
 
-Add the federated extension to the service configuration by adding the following code to the `ConfigureServices` method in the `Startup.cs`.
+Add the federated extension to the service configuration by adding the following code to the `ConfigureServices` method in the `Startup.cs`. 
 
  ```c#
     services
         .AddGraphQLServer()
         .AddFederationExtensions()
         .AddQueryType<Query>()
+
+    services.AddHttpContextAccessor();
 ```
 
 This will extend your server and schema with [Fetch Service capability](https://www.apollographql.com/docs/federation/federation-spec/#fetch-service-capabilities) and custom federation scalars, unions and directives
@@ -23,24 +25,17 @@ For example, following class will generate:
 ```c#
     [FederationObjectDirective(Name = "key", Fields = "id")]
     [FederationObjectDirective(Name = "extends")]
-    public record Hotel : IEntityUnionType
+    public record Hotel([property: FederationFieldDirective(Name = "external")]
+                        [property: GraphQLType(typeof(NonNullType<IdType>))] 
+                        int Id, 
+                        Destination Destination) : IEntityUnionType
     {
-        public Hotel(string Id)
-        {
-            this.Id = Id;
-        }
-
-        [FederationFieldDirective(Name = "external")]
-        [GraphQLType(typeof(NonNullType<IdType>))]
-        public string Id { get; init; }
-
         [GraphQLIgnore]
         public IEntityUnionType ResolveReference(KeyValuePair<string, object> primaryKey)
         {
             if (primaryKey.Key == "id")
             {
-                //fetch a hotel based on the id
-                return new Hotel(primaryKey.Value.ToString());
+                return GetById((int)primaryKey.Value);
             }
 
             return null;
@@ -54,6 +49,8 @@ following schema
     type Hotel @key(fields: "id") @extends {
         id: ID! @external
     }
+
+    union _Entity = Hotel
 ```
 
 ### Key points

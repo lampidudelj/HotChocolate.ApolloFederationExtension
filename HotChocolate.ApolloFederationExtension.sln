@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.ApolloFederationExtension", "src\HotChocolate.ApolloFederationExtension.csproj", "{2D31CE5E-A67F-4075-B1A3-7224ED2A6CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolate.ApolloFederationExtension.Tests", "tests\HotChocolate.ApolloFederationExtension.Tests.csproj", "{D8859E88-790D-4C3B-89DF-F172006D3FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.ApolloFederationExtension.Tests", "tests\HotChocolate.ApolloFederationExtension.Tests.csproj", "{D8859E88-790D-4C3B-89DF-F172006D3FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolate.ApolloFederationExtension.Demo", "Demo\HotChocolate.ApolloFederationExtension.Demo.csproj", "{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D8859E88-790D-4C3B-89DF-F172006D3FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8859E88-790D-4C3B-89DF-F172006D3FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8859E88-790D-4C3B-89DF-F172006D3FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D817FD7A-C67A-4AA5-BF5A-07436B2F4E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
