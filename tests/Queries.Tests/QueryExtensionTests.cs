@@ -1,13 +1,15 @@
-﻿using AutoFixture;
-using FluentAssertions;
+﻿using FluentAssertions;
 using HotChocolate.ApolloFederationExtension.Queries;
 using HotChocolate.ApolloFederationExtension.Unions;
+using HotChocolate.Execution;
+using HotChocolate.Types;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
+using Snapshooter.Xunit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -15,9 +17,8 @@ namespace HotChocolate.ApolloFederationExtension.Tests.Queries.Tests
 {
     public class QueryExtensionTests
     {
-        readonly Fixture _fixture = new();
         private Mock<IHttpContextAccessor> _mockContextAccessor;
-        FederationQueryExtensions _queryExtension;
+        private FederationQueryExtensions _queryExtension;
 
         public QueryExtensionTests()
         {
@@ -26,7 +27,7 @@ namespace HotChocolate.ApolloFederationExtension.Tests.Queries.Tests
         }
 
         [Fact]
-        public async Task _entities_GivenValidTypename_ReturnsRequestedEntityType()
+        public void _entities_GivenValidTypename_ReturnsRequestedEntityType()
         {
             // arrange
             List<object> representations = new List<object>() { new Dictionary<string, object>() { { "__typename", "Foo" }, { "id", "1" } } };
@@ -40,23 +41,39 @@ namespace HotChocolate.ApolloFederationExtension.Tests.Queries.Tests
         }
 
         [Fact]
-        public async Task _service()
+        public async Task RemoveDirectiveTypes_MatchExpected()
         {
             // arrange
-            List<object> representations = new List<object>() { new Dictionary<string, object>() { { "__typename", "Foo" }, { "id", "1" } } };
+            ISchema schema = await new ServiceCollection()
+                .AddGraphQL()
+                .AddQueryType(x => x.Name("Query").Field("foo").Resolve("Bar"))
+                .AddType<Foo>()
+                .AddFederationExtensions()
+                .BuildSchemaAsync();
 
             // act
-            var actual = _queryExtension._entities(representations);
+            var resultingSchema = FederationQueryExtensions.RemoveDirectiveTypes(schema.ToDocument());
 
             // assert
-            actual.Count.Should().Be(1);
-            actual.First().GetType().Should().Be(typeof(Foo));
+            resultingSchema.ToString().MatchSnapshot();
         }
 
+        [Fact]
+        public void RemoveDirectiveTypes_GivenEmptySchema_ThrowsArgumentNullException()
+        {
+            //act
+            Exception? result = Record.Exception(() => FederationQueryExtensions.RemoveDirectiveTypes(null));
+
+            // assert
+            Assert.IsType<ArgumentNullException>(result);
+        }
     }
 
-    internal class Foo : IEntityUnionType
+    public class Foo : IEntityUnionType
     {
+        public string Id { get; set; }
+
+        [GraphQLIgnore]
         public IEntityUnionType ResolveReference(KeyValuePair<string, object> primaryKey)
         {
             return new Foo();

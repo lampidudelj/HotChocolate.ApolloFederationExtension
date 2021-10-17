@@ -1,0 +1,25 @@
+﻿schema {
+  query: Query
+}
+
+type Foo {
+  id: String
+}
+
+type Query {
+  foo: String
+  _entities(representations: [_Any!]!): [_Entity]
+  _service: _Service
+}
+
+type _Service {
+  sdl: String
+}
+
+union _Entity = Foo
+
+"Used to pass representations of entities from external services into the root _entities field for execution."
+scalar _Any
+
+"Represents a set of fields"
+scalar _FieldSet

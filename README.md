@@ -64,3 +64,6 @@ following schema
 ## TODO
 
 - implement [@provides](https://www.apollographql.com/docs/federation/federation-spec/#provides) and [@requires](https://www.apollographql.com/docs/federation/federation-spec/#requires) directives.
+- validation on _Any and _FieldSet scalars
+- better solution to getting schema for _service resolver. Cache?
+- input type for KeyValuePair to get around having to use `[GraphQLIgnore]` attribute_

@@ -6,12 +6,11 @@ using System.Collections.Generic;
 
 namespace HotChocolate.ApolloFederationExtension.Demo.Model
 {
-
     [FederationObjectDirective(Name = "key", Fields = "id")]
     [FederationObjectDirective(Name = "extends")]
     public record Hotel([property: FederationFieldDirective(Name = "external")]
-                        [property: GraphQLType(typeof(NonNullType<IdType>))] 
-                        int Id, 
+                        [property: GraphQLType(typeof(NonNullType<IdType>))]
+                        int Id,
                         Destination Destination) : IEntityUnionType
     {
         [GraphQLIgnore]
