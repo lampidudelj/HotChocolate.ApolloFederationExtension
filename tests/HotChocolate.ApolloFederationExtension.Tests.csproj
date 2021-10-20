@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.1.0" />
-    <PackageReference Include="HotChocolate" Version="11.3.8" />
-    <PackageReference Include="HotChocolate.Language" Version="11.3.8" />
-    <PackageReference Include="HotChocolate.Types" Version="11.3.8" />
+    <PackageReference Include="HotChocolate" Version="12.0.1" />
+    <PackageReference Include="HotChocolate.Language" Version="12.0.1" />
+    <PackageReference Include="HotChocolate.Types" Version="12.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Snapshooter" Version="0.7.1" />

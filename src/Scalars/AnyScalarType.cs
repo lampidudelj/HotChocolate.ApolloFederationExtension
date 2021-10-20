@@ -32,7 +32,7 @@ namespace HotChocolate.ApolloFederationExtension.Scalars
             }
         }
 
-        public override object ParseLiteral(IValueNode valueSyntax, bool withDefaults = true)
+        public override object ParseLiteral(IValueNode valueSyntax)
         {
             switch (valueSyntax)
             {
